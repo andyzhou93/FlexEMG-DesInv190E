@@ -21,3 +21,6 @@ Data streaming is started by pressing the "Stream Data" button. Upon starting, t
 Saved data streams are located in the directory "data/hdfs/" in HDF file format. Filenames are the timestamp of the start of the stream in "YYYYMMDD-hhmmss.hdf" format.
 
 A Matlab function "load_FlexEMG_HDF.m" for loading the data is included. The function can be called with a filename as its only argument, or with no arguments. When called without arguments, the function opens a dialog box to select the file to be loaded. The function returns an N x 64 array, where N is the number of samples recorded. Samples are recorded at 1 kS/s.
+
+## Real time processing
+A blank function for inserting any potential real time processing commands has been included. The function is called "FlexEMG_DataOp", located in the file "DataOp.py". It is called every 50ms when streaming. The passed argument "data" is a 50 x 64 element list containing 50 data samples from each of the 64 recorded channels.
