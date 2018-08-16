@@ -12,6 +12,7 @@ from ctypes import byref, create_string_buffer, c_int, sizeof, POINTER, \
     cast, c_uint8, c_uint16, c_ubyte, string_at, c_void_p, cdll, addressof, \
     c_char
 import os
+from DataOp import FlexEMG_DataOp
 
 datalen = 200
 
@@ -243,6 +244,7 @@ class streamAdcThread(QThread):
                     self.dataTable.flush()
                 if samples%50 == 0:
                     self.streamAdcData.emit(out)
+                    FlexEMG_DataOp(out)
                     out = []
 
             timeout = False
