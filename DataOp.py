@@ -5,3 +5,4 @@ def FlexEMG_DataOp(data):
 	# there are 50 samples for each of 64 channels
 	
 	# print("Perform data operation")
+	pass
